@@ -1,0 +1,39 @@
+*
+    box-sizing: border-box
+body
+    background-color: #151515
+    color: #fff
+    font-family: Arial
+header
+    margin: 5em
+.content
+    margin: 0 auto
+    max-width: 1170px
+h1
+    text-align: center
+    text-transform: uppercase
+.items
+    display: flex
+    flex-wrap: wrap
+    padding: 0
+    justify-content: space-between
+    .item
+        background: #2a2a2a
+        border-bottom: 0.125rem solid #3273C5
+        box-sizing: border-box
+        color: #ddd
+        list-style: none
+        margin-bottom: 5%
+        padding: 1em
+        width: 100%
+        a
+            color: #fff
+            text-decoration: none
+        img
+            width: 100%
+
+@media (min-width: 480px)
+    .items
+        .item
+            margin-bottom: 3%
+            width: 48.5%
