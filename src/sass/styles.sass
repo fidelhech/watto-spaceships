@@ -10,6 +10,8 @@ $grayWatto: #2a2a2a
 $whiteWatto: #fff
 $lessWhiteWatto: #ddd
 $blueWatto: #3273C5
+$redWatto: #d63939
+$greenWatto: #0ec530
 /* Layout */
 body
     background-color: $blackWatto
@@ -50,19 +52,24 @@ a
 /* Single */
 .single-product
     background: rgba($grayWatto, .5)
+    flex-direction: column
     padding: 2%
     h2
         border-bottom: 0.125rem solid $blueWatto
+        font-size: 1.8em
         margin-bottom: 2em
         padding: 1em
+        text-transform: uppercase
         width: 100%
     .product-img
-        width: 40%
+        margin-bottom: 2em
+        width: 100%
         img
-          width: 100%
+            width: 100%
+        p
+            padding-left: 2%
     .product-details
-        padding: 0 0 0 2%
-        width: 60%
+        width: 100%
         h3
             margin-top: 0
             border-bottom: 0.125rem solid $blueWatto
@@ -76,8 +83,51 @@ a
             line-height: 2em
             span
               display: block
+        .price-container
+            border-top: 0.125rem solid $blueWatto
+            border-bottom: 0.125rem solid $blueWatto
+            p
+                font-size: 1.5em
+                color: $greenWatto
+                font-weight: bold
+                letter-spacing: 1px
+                text-align: center
+            .out-of-stock
+                color: $redWatto
+                text-transform: uppercase
+.btn
+    background-color: $blueWatto
+    border-radius: 5px
+    display: block
+    font-weight: bold
+    margin: 2em auto
+    padding: 1.5em
+    text-align: center
+    text-decoration: none
+    text-transform: uppercase
+    max-width: 300px
+    width: 100%
+    &:hover
+        background-color: darken($blueWatto, 10%)
+    i
+        font-size: 1.2em
+        margin-right: 0.3em
+
+
+
 footer
     margin: 5em
+
+@media (min-width: 768px)
+  .single-product
+      flex-direction: row
+      .product-img
+          width: 40%
+          img
+            width: 100%
+      .product-details
+          padding: 0 0 0 2%
+          width: 60%
 
 @media (min-width: 480px)
     .items

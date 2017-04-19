@@ -2,23 +2,25 @@
     <h2>{{spaceship.name}}</h2>
     <div class="product-img">
       <img src="http://placehold.it/450x350?text={{spaceship.name}}" alt="">
-      <h3>Manufacturer</h3>
-      <p>{{spaceship.manufacturer}}</p>
-      <h3>Class</h3>
-      <p>{{spaceship.class}}</p>
+      <p><i class="fa fa-industry"></i> {{spaceship.manufacturer}}</p>
+      <p><i class="fa fa-fighter-jet"></i> {{spaceship.class}}</p>       
     </div>
     <div class="product-details">
       <h3>Technical Specifications</h3>
       <ul>
-        <li><span>Length:</span> <span>{{spaceship.techspecs.length}}</span></li>
-        <li><span>Max Accel:</span> <span>{{spaceship.techspecs.maxaccel}}</span></li>
-        <li><span>MGLT:</span> <span>{{spaceship.techspecs.MGLT}}</span></li>
-        <li><span>Max Atmospheric Speed:</span> <span>{{spaceship.techspecs.maxatmosphericspeed}}</span></li>
-        <li><span>Hull:</span> <span>{{spaceship.techspecs.hull}}</span></li>
-        <li><span>Sensor:</span> <span>{{spaceship.techspecs.sensor}}</span></li>
-        <li><span>Targeting:</span> <span>{{spaceship.techspecs.targeting}}</span></li>
-        <li><span>Armament:</span> <span>{{spaceship.techspecs.armament}}</span></li>
-        <li><span>Communications:</span> <span>{{spaceship.techspecs.communications}}</span></li>
+        <li ng-show="{{spaceship.techspecs.length}}"><span>Length:</span> <span>{{spaceship.techspecs.length}}</span></li>
+        <li ng-show="{{spaceship.techspecs.maxaccel}}"><span>Max Accel:</span> <span>{{spaceship.techspecs.maxaccel}}</span></li>
+        <li ng-show="{{spaceship.techspecs.MGLT}}"><span>MGLT:</span> <span>{{spaceship.techspecs.MGLT}}</span></li>
+        <li ng-show="{{spaceship.techspecs.maxatmosphericspeed}}"><span>Max Atmospheric Speed:</span> <span>{{spaceship.techspecs.maxatmosphericspeed}}</span></li>
+        <li ng-show="{{spaceship.techspecs.hull}}"><span>Hull:</span> <span>{{spaceship.techspecs.hull}}</span></li>
+        <li ng-show="{{spaceship.techspecs.sensor}}"><span>Sensor:</span> <span>{{spaceship.techspecs.sensor}}</span></li>
+        <li ng-show="{{spaceship.techspecs.targeting}}"><span>Targeting:</span> <span>{{spaceship.techspecs.targeting}}</span></li>
+        <li ng-show="{{spaceship.techspecs.armament}}"><span>Armament:</span> <span>{{spaceship.techspecs.armament}}</span></li>
+        <li ng-show="{{spaceship.techspecs.communications}}"><span>Communications:</span> <span>{{spaceship.techspecs.communications}}</span></li>
       </ul>
+      <div class="price-container">
+        <p ng-class="{'out-of-stock':!spaceship.price}">{{spaceship.price ? spaceship.price: 'Out of stock'}}</p>
+      </div>
+      <a class="btn" href="javascript:void(0)" ng-show="spaceship.price"><i class="fa fa-shopping-cart"></i> Add to cart</a>
     </div>
 </div>
