@@ -1,7 +1,9 @@
 # Watto's Spaceship Emporium
 
-A simple application with support for:
+A simple AngularJS application with support for:
 
+* javascript
+* angularjs
 * gulp
 * sass
 * sourcemaps
@@ -92,7 +94,7 @@ This project encourages Sass use. Keep your Sass files modular inside `src/sass`
 
 ## Development
 
-The first time you start a project, you will need to create your `css, js` folders in order for Browser-sync to successfully serve your project's files.
+The first time you start this project, you will need to create your `css, js` folders in order for Browser-sync to successfully serve your project's files.
 
 Run
 
