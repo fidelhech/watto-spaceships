@@ -9,32 +9,33 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl : "views/listings.html",
         controller  : "mainCtrl"
     })
-    .when("/:num", {
+    .when("/spaceship/:num", {
         templateUrl : "views/single.html",
         controller  : "singleCtrl"
+    })
+    .otherwise({
+        redirectTo: "/"
     });
 
 }]);
 
 app.controller( "mainCtrl", [ '$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
 
-    // $http.get("//demo7475333.mockable.io/spaceships")
-    // .then(function(response) {
-    //     $rootScope.spaceships =  response.data.products;
-    // });
-
-    $http.get("mock/api.json")
+    $http.get("//demo7475333.mockable.io/spaceships")
     .then(function(response) {
         $rootScope.spaceships =  response.data.products;
     });
+
+    // $http.get("mock/api.json")
+    // .then(function(response) {
+    //     $rootScope.spaceships =  response.data.products;
+    // });
 
 }] );
 
 app.controller( "singleCtrl", [ '$scope', '$routeParams', '$rootScope', function($scope, $routeParams, $rootScope) {
 
-console.log($routeParams.num);
-
   $scope.spaceship = $rootScope.spaceships[$routeParams.num];
-
+  $scope.spaceship.imageNum = $routeParams.num;
 
 }] );
