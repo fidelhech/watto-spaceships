@@ -1,8 +1,24 @@
-<div class="single-product">
+<div class="single-product flex-container">
+    <h2>{{spaceship.name}}</h2>
     <div class="product-img">
       <img src="http://placehold.it/450x350?text={{spaceship.name}}" alt="">
+      <h3>Manufacturer</h3>
+      <p>{{spaceship.manufacturer}}</p>
+      <h3>Class</h3>
+      <p>{{spaceship.class}}</p>
     </div>
     <div class="product-details">
-      <h2>{{spaceship.name}}</h2>
+      <h3>Technical Specifications</h3>
+      <ul>
+        <li><span>Length:</span> <span>{{spaceship.techspecs.length}}</span></li>
+        <li><span>Max Accel:</span> <span>{{spaceship.techspecs.maxaccel}}</span></li>
+        <li><span>MGLT:</span> <span>{{spaceship.techspecs.MGLT}}</span></li>
+        <li><span>Max Atmospheric Speed:</span> <span>{{spaceship.techspecs.maxatmosphericspeed}}</span></li>
+        <li><span>Hull:</span> <span>{{spaceship.techspecs.hull}}</span></li>
+        <li><span>Sensor:</span> <span>{{spaceship.techspecs.sensor}}</span></li>
+        <li><span>Targeting:</span> <span>{{spaceship.techspecs.targeting}}</span></li>
+        <li><span>Armament:</span> <span>{{spaceship.techspecs.armament}}</span></li>
+        <li><span>Communications:</span> <span>{{spaceship.techspecs.communications}}</span></li>
+      </ul>
     </div>
 </div>

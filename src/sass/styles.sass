@@ -1,36 +1,83 @@
+/* General Rules */
 *
     box-sizing: border-box
+.flex-container
+    display: flex
+    flex-wrap: wrap
+/* Colors */
+$blackWatto: #151515
+$grayWatto: #2a2a2a
+$whiteWatto: #fff
+$lessWhiteWatto: #ddd
+$blueWatto: #3273C5
+/* Layout */
 body
-    background-color: #151515
-    color: #fff
+    background-color: $blackWatto
+    color: $whiteWatto
     font-family: Arial
 header
     margin: 5em
+    a
+      text-decoration: none
+h1
+    color: $whiteWatto
+    letter-spacing: 2px
+    text-align: center
+    text-transform: uppercase
+a
+    color: $whiteWatto
 .content
     margin: 0 auto
     max-width: 1170px
-h1
-    text-align: center
-    text-transform: uppercase
 .items
-    display: flex
-    flex-wrap: wrap
     padding: 0
     justify-content: space-between
     .item
-        background: #2a2a2a
-        border-bottom: 0.125rem solid #3273C5
+        background: rgba($grayWatto, .5)
+        border-bottom: 0.125rem solid $blueWatto
         box-sizing: border-box
-        color: #ddd
+        color: $lessWhiteWatto
         list-style: none
         margin-bottom: 5%
         padding: 1em
         width: 100%
         a
-            color: #fff
+            color: $whiteWatto
             text-decoration: none
         img
             width: 100%
+
+/* Single */
+.single-product
+    background: rgba($grayWatto, .5)
+    padding: 2%
+    h2
+        border-bottom: 0.125rem solid $blueWatto
+        margin-bottom: 2em
+        padding: 1em
+        width: 100%
+    .product-img
+        width: 40%
+        img
+          width: 100%
+    .product-details
+        padding: 0 0 0 2%
+        width: 60%
+        h3
+            margin-top: 0
+            border-bottom: 0.125rem solid $blueWatto
+            padding-bottom: 1em
+        ul
+          list-style: none
+          padding: 0
+          li
+            display: flex
+            justify-content: space-between
+            line-height: 2em
+            span
+              display: block
+footer
+    margin: 5em
 
 @media (min-width: 480px)
     .items
