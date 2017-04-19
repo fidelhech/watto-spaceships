@@ -21,15 +21,17 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 
 app.controller( "mainCtrl", [ '$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
 
-    $http.get("//demo7475333.mockable.io/spaceships")
-    .then(function(response) {
-        $rootScope.spaceships =  response.data.products;
-    });
+    if($rootScope.spaceships === undefined) {
+        $http.get("//demo7475333.mockable.io/spaceships")
+        .then(function(response) {
+            $rootScope.spaceships =  response.data.products;
+        });
 
-    // $http.get("mock/api.json")
-    // .then(function(response) {
-    //     $rootScope.spaceships =  response.data.products;
-    // });
+        // $http.get("mock/api.json")
+        // .then(function(response) {
+        //     $rootScope.spaceships =  response.data.products;
+        // });
+    }
 
 }] );
 
